@@ -33,3 +33,23 @@ func (h *Handler) GetUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(user)
 }
+
+// GetUserActionCount handles the request to get the count of all actions for a specific user.
+func (h *Handler) GetUserActionCount(w http.ResponseWriter, r *http.Request) {
+	userID, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		http.Error(w, "Invalid user ID", http.StatusBadRequest)
+		return
+	}
+
+	actions, err := h.ActionsRepository.GetActionsForUser(userID)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Possible improvement: Use a struct for the response instead of a map
+	response := make(map[string]int)
+	response["count"] = len(actions)
+	json.NewEncoder(w).Encode(response)
+}
