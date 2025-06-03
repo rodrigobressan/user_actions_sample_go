@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"surfe_assignment/handlers"
+	"surfe_assignment/middleware"
 	"surfe_assignment/models"
 	"surfe_assignment/repository/memory"
 )
@@ -60,6 +61,8 @@ func main() {
 	}
 
 	r := mux.NewRouter()
+	r.Use(middleware.JSONMiddleware)
+	r.Use(middleware.LoggingMiddleware)
 
 	r.HandleFunc("/users/{id}", handler.GetUser).Methods("GET")
 	r.HandleFunc("/users/{id}/actions/count", handler.GetUserActionCount).Methods("GET")
