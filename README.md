@@ -23,6 +23,9 @@ The project is organized into the following packages:
 - **`handlers`**:
   Contains HTTP handlers for processing API requests.
 
+- **`middleware`**:
+  Implements http middlewares for better logging and JSON response headers.
+
 - **`models`**:
   Defines the data structures for users and actions.
 
