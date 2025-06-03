@@ -67,5 +67,7 @@ func main() {
 	r.HandleFunc("/referral_index", handler.GetReferralIndex).Methods("GET")
 
 	log.Println("Server running on :8080")
+
+	// Alternatively, we could also load this port (and any other configuration) from an environment variable or a config file
 	http.ListenAndServe(":8080", r)
 }
