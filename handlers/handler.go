@@ -68,3 +68,15 @@ func (h *Handler) GetNextActionProbabilities(w http.ResponseWriter, r *http.Requ
 	probs := utils.ComputeNextActionProbs(allActions, actionType)
 	json.NewEncoder(w).Encode(probs)
 }
+
+// GetReferralIndex handles the request to compute the referral index for all users based on their actions.
+func (h *Handler) GetReferralIndex(w http.ResponseWriter, r *http.Request) {
+	allActions, err := h.ActionsRepository.GetAll()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	index := utils.ComputeReferralIndex(allActions)
+	json.NewEncoder(w).Encode(index)
+}

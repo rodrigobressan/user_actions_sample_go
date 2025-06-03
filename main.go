@@ -64,6 +64,7 @@ func main() {
 	r.HandleFunc("/users/{id}", handler.GetUser).Methods("GET")
 	r.HandleFunc("/users/{id}/actions/count", handler.GetUserActionCount).Methods("GET")
 	r.HandleFunc("/actions/next/{type}", handler.GetNextActionProbabilities).Methods("GET")
+	r.HandleFunc("/referral_index", handler.GetReferralIndex).Methods("GET")
 
 	log.Println("Server running on :8080")
 	http.ListenAndServe(":8080", r)
