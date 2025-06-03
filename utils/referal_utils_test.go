@@ -2,8 +2,8 @@ package utils
 
 import (
 	"reflect"
-	"surfe_assignment/models"
 	"testing"
+	"user_actions_sample_go/models"
 )
 
 func TestComputeReferralIndex(t *testing.T) {

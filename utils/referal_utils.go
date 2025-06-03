@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"surfe_assignment/models"
+	"user_actions_sample_go/models"
 )
 
 const (

@@ -78,8 +78,8 @@ The project is organized into the following packages:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/rodrigobressan/surfe_assignment.git
-cd surfe_assignment
+git clone https://github.com/rodrigobressan/user_actions_sample_go.git
+cd user_actions_sample_go
 ```
    
 2. Install dependencies:  

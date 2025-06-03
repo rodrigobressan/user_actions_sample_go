@@ -1,7 +1,7 @@
 package memory
 
 import (
-	"surfe_assignment/models"
+	"user_actions_sample_go/models"
 )
 
 // InMemoryActionRepo is an in-memory implementation of the ActionsRepository interface.

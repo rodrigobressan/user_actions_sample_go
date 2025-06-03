@@ -7,10 +7,10 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"surfe_assignment/handlers"
-	"surfe_assignment/middleware"
-	"surfe_assignment/models"
-	"surfe_assignment/repository/memory"
+	"user_actions_sample_go/handlers"
+	"user_actions_sample_go/middleware"
+	"user_actions_sample_go/models"
+	"user_actions_sample_go/repository/memory"
 )
 
 func loadUsers() ([]models.User, error) {

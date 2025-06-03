@@ -2,7 +2,7 @@ package utils
 
 import (
 	"sort"
-	"surfe_assignment/models"
+	"user_actions_sample_go/models"
 )
 
 // ActionProbability represents a possible action and its likelihood

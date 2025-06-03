@@ -1,4 +1,4 @@
-module surfe_assignment
+module user_actions_sample_go
 
 go 1.24.1
 

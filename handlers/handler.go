@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
-	"surfe_assignment/repository"
-	"surfe_assignment/utils"
+	"user_actions_sample_go/repository"
+	"user_actions_sample_go/utils"
 
 	"github.com/gorilla/mux"
 )

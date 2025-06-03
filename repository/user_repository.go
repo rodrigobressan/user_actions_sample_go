@@ -1,6 +1,6 @@
 package repository
 
-import "surfe_assignment/models"
+import "user_actions_sample_go/models"
 
 // UserRepository defines the interface for interacting with users in the repository.
 type UserRepository interface {

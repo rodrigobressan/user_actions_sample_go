@@ -2,7 +2,7 @@ package memory
 
 import (
 	"errors"
-	"surfe_assignment/models"
+	"user_actions_sample_go/models"
 )
 
 // InMemoryUserRepo is an in-memory implementation of the UserRepository interface.
