@@ -72,5 +72,8 @@ func main() {
 	log.Println("Server running on :8080")
 
 	// Alternatively, we could also load this port (and any other configuration) from an environment variable or a config file
-	http.ListenAndServe(":8080", r)
+	err = http.ListenAndServe(":8080", r)
+	if err != nil {
+		log.Fatalf("Failed to start server: %v", err)
+	}
 }
