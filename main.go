@@ -64,6 +64,7 @@ func main() {
 	r.Use(middleware.JSONMiddleware)
 	r.Use(middleware.LoggingMiddleware)
 
+	r.HandleFunc("/", handler.Index).Methods("GET")
 	r.HandleFunc("/users/{id}", handler.GetUser).Methods("GET")
 	r.HandleFunc("/users/{id}/actions/count", handler.GetUserActionCount).Methods("GET")
 	r.HandleFunc("/actions/next/{type}", handler.GetNextActionProbabilities).Methods("GET")

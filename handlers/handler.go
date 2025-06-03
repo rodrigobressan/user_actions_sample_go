@@ -16,6 +16,12 @@ type Handler struct {
 	ActionsRepository repository.ActionsRepository
 }
 
+// Index handles the root request and returns a welcome message.
+func (h *Handler) Index(w http.ResponseWriter, r *http.Request) {
+	response := map[string]string{"message": "Welcome to the Users and Actions API"}
+	json.NewEncoder(w).Encode(response)
+}
+
 // GetUser handles the request to get a user by ID.
 func (h *Handler) GetUser(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(mux.Vars(r)["id"])
