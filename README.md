@@ -1,5 +1,8 @@
 # User & Actions Sample API (Go)
 
+
+## Live Demo (deployed with Railway ❤️): https://useractionssamplego-production.up.railway.app/
+
 ---
 
 ## Features
