@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strconv"
 	"surfe_assignment/repository"
+	"surfe_assignment/utils"
 
 	"github.com/gorilla/mux"
 )
@@ -52,4 +53,18 @@ func (h *Handler) GetUserActionCount(w http.ResponseWriter, r *http.Request) {
 	response := make(map[string]int)
 	response["count"] = len(actions)
 	json.NewEncoder(w).Encode(response)
+}
+
+// GetNextActionProbabilities handles the request to get the next action probabilities based on the action type.
+func (h *Handler) GetNextActionProbabilities(w http.ResponseWriter, r *http.Request) {
+	actionType := mux.Vars(r)["type"]
+
+	allActions, err := h.ActionsRepository.GetAll()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	probs := utils.ComputeNextActionProbs(allActions, actionType)
+	json.NewEncoder(w).Encode(probs)
 }
